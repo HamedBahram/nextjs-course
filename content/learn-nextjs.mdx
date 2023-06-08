@@ -1,0 +1,41 @@
+---
+title: Learn NextJs 13
+author: Hamed Bahram
+---
+
+# This is a markdown file
+
+<Newsletter />
+
+Here is a list of items:
+
+- Item one
+- Item two
+- Item three
+
+```jsx
+import { getPostBySlug } from '@/lib/posts'
+
+import { MDXRemote } from 'next-mdx-remote/rsc'
+
+const Page = async ({ params }) => {
+  const { slug } = params
+
+  const { content, frontmatter } = await getPostBySlug(slug)
+
+  return (
+    <section className='py-24'>
+      <div className='container'>
+        <h1 className='text-3xl font-bold'>Blog post</h1>
+        <h2 className='mt-6 text-lg font-medium'>{slug}</h2>
+
+        <section className='prose'>
+          <MDXRemote source={content} />
+        </section>
+      </div>
+    </section>
+  )
+}
+
+export default Page
+```

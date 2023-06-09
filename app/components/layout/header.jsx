@@ -1,13 +1,10 @@
-import Link from 'next/link'
-import React from 'react'
-import NavLink from '../ui/NavLink'
-import ContactButton from '../ui/ContactButton'
+import NavLink from '@/components/ui/NavLink'
 
 const Header = () => {
   return (
     <header className='bg-gray-100 p-4'>
       <nav className='container'>
-        <ul className='flex gap-3'>
+        <ul className='flex gap-6 text-gray-500'>
           <li>
             <NavLink href='/'>Home</NavLink>
           </li>

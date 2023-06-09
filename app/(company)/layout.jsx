@@ -1,6 +1,6 @@
 import NavLink from '@/components/ui/NavLink'
 
-const AboutLayout = ({ children }) => {
+const CompanyLayout = ({ children }) => {
   return (
     <section className='py-24'>
       <div className='container flex'>
@@ -29,4 +29,4 @@ const AboutLayout = ({ children }) => {
   )
 }
 
-export default AboutLayout
+export default CompanyLayout

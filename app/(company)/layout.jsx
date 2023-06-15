@@ -4,7 +4,7 @@ const CompanyLayout = ({ children }) => {
   return (
     <section className='py-24'>
       <div className='container flex'>
-        <div className='overflow-y-auto border-r border-gray-200 py-6 pr-12'>
+        <div className='overflow-y-auto border-r border-gray-200 dark:border-gray-600 py-4 pr-14'>
           <nav className='flex flex-col'>
             <ul role='list' className='flex flex-1 flex-col gap-y-4'>
               <li>
@@ -23,7 +23,7 @@ const CompanyLayout = ({ children }) => {
           </nav>
         </div>
 
-        <main className='grow ml-12 p-6 bg-gray-50'>{children}</main>
+        <main className='grow ml-12 p-4'>{children}</main>
       </div>
     </section>
   )

@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Newsletter = () => {
   return (
     <section className='not-prose'>

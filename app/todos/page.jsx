@@ -1,6 +1,6 @@
 async function getTodos() {
   const res = await fetch('https://jsonplaceholder.typicode.com/todos', {
-    cache: 'no-store'
+    next: { revalidate: 10 }
   })
 
   if (!res.ok) throw new Error('Failed to fetch todos.')

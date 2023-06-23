@@ -1,7 +1,7 @@
 import { getGuestbookEntries } from '@/lib/mongo/guestbook'
 import GuestbookEntryForm from '@/components/ui/GuestbookEntryForm'
 
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 
 async function getData() {
   const { entries, error } = await getGuestbookEntries()
@@ -13,8 +13,13 @@ async function getData() {
   return entries
 }
 
+async function getMetadata() {
+  const { entries, error } = await getGuestbookEntries()
+}
+
 const Page = async () => {
   const entries = await getData()
+  const metadata = await getMetadata()
 
   return (
     <section className='py-24'>

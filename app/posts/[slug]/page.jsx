@@ -18,7 +18,7 @@ const Page = async ({ params }) => {
     <section className='py-24'>
       <div className='container'>
         {/* Post frontmatter */}
-        <header className='rounded bg-gray-100 dark:bg-gray-800 p-8'>
+        <header className='rounded bg-gray-100 p-8 dark:bg-gray-800'>
           <h1 className='font-serif text-3xl'>{frontmatter.title}</h1>
           <p className='mb-6 text-sm font-light uppercase leading-snug tracking-wide text-gray-500'>
             {frontmatter.author}

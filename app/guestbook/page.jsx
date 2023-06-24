@@ -1,5 +1,5 @@
 import { getGuestbookEntries } from '@/lib/mongo/guestbook'
-import GuestbookEntryForm from '@/components/ui/GuestbookEntryForm'
+import GuestbookEntryForm from '@/components/GuestbookEntryForm'
 
 export const dynamic = 'force-dynamic'
 

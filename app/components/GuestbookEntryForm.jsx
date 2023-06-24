@@ -1,21 +1,26 @@
 'use client'
 
 import { addEntry } from '@/app/_actions'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 const GuestbookEntryForm = () => {
+  const formRef = useRef(null)
   const [validationError, setValidationError] = useState(null)
 
+  // client action calling a server action
   async function action(data) {
-    const { error } = await addEntry(data)
-    if (error) {
-      setValidationError(error)
+    const result = await addEntry(data)
+    if (result?.error) {
+      setValidationError(result?.error)
+    } else {
+      formRef.current.reset()
+      setValidationError(null)
     }
   }
 
   return (
     <form
-      key={Math.random()}
+      ref={formRef}
       className='flex max-w-sm flex-col gap-y-3 text-sm'
       action={action}
     >

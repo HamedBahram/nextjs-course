@@ -7,9 +7,20 @@ import { getAllPosts, getPostBySlug } from '@/lib/posts'
 import beach from '@/public/images/beach-boat.jpg'
 import BlogHeaderImage from '@/app/components/BlogHeaderImage'
 
+export async function generateMetadata({ params, searchParams }, parent) {
+  const { slug } = params
+  const { content, frontmatter } = await getPostBySlug(slug)
+
+  // optionally access and extend (rather than replace) parent metadata
+  // const previousImages = (await parent).openGraph?.images || []
+
+  return {
+    title: `${frontmatter.title} by ${frontmatter.author}`
+  }
+}
+
 export async function generateStaticParams() {
   const posts = await getAllPosts()
-
   return posts.map(post => ({ slug: post.slug }))
 }
 

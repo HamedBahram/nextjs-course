@@ -15,6 +15,11 @@ module.exports = {
         md: '1.5rem',
         lg: '2rem'
       }
+    },
+    extend: {
+      fontFamily: {
+        playfair: ['var(--font-playfair)']
+      }
     }
   },
   plugins: [require('@tailwindcss/typography')]

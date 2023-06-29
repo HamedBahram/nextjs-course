@@ -1,5 +1,7 @@
 import './globals.css'
 
+import { ClerkProvider } from '@clerk/nextjs'
+
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
 import Providers from './providers'
@@ -13,22 +15,6 @@ const playfairDisplay = Playfair_Display({
   variable: '--font-playfair'
 })
 
-// Multiple size or styles
-// import { Roboto } from 'next/font/google'
-// const roboto = Roboto({
-//   weight: ['400', '700'],
-//   style: ['normal', 'italic'],
-//   subsets: ['latin'],
-//   display: 'swap'
-// })
-
-// Font files can be colocated inside of `app`
-// import LocalFont from 'next/font/local'
-// const localFont = LocalFont({
-//   src: './my-font.woff2',
-//   display: 'swap'
-// })
-
 export const metadata = {
   title: 'Hamed Bahram Portfolio',
   description: 'Created using NextJs 13'
@@ -36,14 +22,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en' suppressHydrationWarning>
-      <body className={`${inter.className} ${playfairDisplay.variable}`}>
-        <Providers>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </Providers>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang='en' suppressHydrationWarning>
+        <body className={`${inter.className} ${playfairDisplay.variable}`}>
+          <Providers>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </Providers>
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }

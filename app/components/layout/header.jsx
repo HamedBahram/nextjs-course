@@ -1,5 +1,6 @@
 import NavLink from '@/components/ui/NavLink'
 import ThemeButton from '@/components/ui/ThemeButton'
+import UserAvatarButton from '@/components/ui/UserAvatarButton'
 
 const Header = () => {
   return (
@@ -20,7 +21,10 @@ const Header = () => {
           </li>
         </ul>
 
-        <ThemeButton />
+        <div className='flex items-center gap-4'>
+          <ThemeButton />
+          <UserAvatarButton />
+        </div>
       </nav>
     </header>
   )

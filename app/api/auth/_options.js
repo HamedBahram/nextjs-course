@@ -26,5 +26,8 @@ export const authOptions = {
   pages: {
     signIn: '/signin'
   },
-  adapter: MongoDBAdapter(clientPromise)
+  adapter: MongoDBAdapter(clientPromise),
+  session: {
+    strategy: 'jwt'
+  }
 }

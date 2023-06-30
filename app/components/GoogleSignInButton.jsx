@@ -1,12 +1,8 @@
 'use client'
 
-import { useSearchParams } from 'next/navigation'
 import { signIn } from 'next-auth/react'
 
-const GoogleSignInButton = () => {
-  const searchParams = useSearchParams()
-  const callbackUrl = searchParams.get('callbackUrl')
-
+const GoogleSignInButton = ({ callbackUrl }) => {
   return (
     <button
       className='inline-flex w-full justify-center rounded-lg border border-gray-500 bg-black px-3 py-2 text-sm text-white'
